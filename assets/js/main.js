@@ -52,23 +52,23 @@ linkWork.forEach(l => l.addEventListener('click', activeWork))
 
 /*=============== SWIPER TESTIMONIAL ===============*/
 let swiperTestimonial = new Swiper('.testimonial__container', {
-  spaceBeteween: 24,
+  spaceBetween: 24,
   loop: true,
   grabCursor: true,
   pagination: {
     el: '.swiper-pagination',
-    clickable: true
+    clickable: true,
   },
   breakpoints: {
     576: {
-      slidesPerView: 2
+      slidesPerView: 2,
     },
     768: {
       slidesPerView: 2,
-      spaceBeteween: 48
-    }
+      spaceBeteween: 48,
+    },
   }
-})
+});
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const sections = document.querySelectorAll('section[id]')
@@ -126,3 +126,14 @@ themeButton.addEventListener('click', ()=> {
 })
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+  origin: 'top',
+  distance: '60px',
+  duration: 2500,
+  delay: 400,
+  reset: true,
+})
+
+sr.reveal(`.home__data`)
+sr.reveal(`.home__handle`, {delay:700})
+sr.reveal(`.home__social, .home__scroll`, {delay: 900, origin: 'bottom'})
